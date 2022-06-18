@@ -27,8 +27,8 @@
             @csrf
             <input type="nummber" name="amount" value="10" >
             <select name="payment_method" id="payment_method">
-                <option value="Paypal">PayPal</option>
-                <option value="Stripe">Stripe</option>
+                <option value="paypal">PayPal</option>
+                <option value="stripe">Stripe</option>
             </select>
             <button type="submit">Submit</button>
         </form>

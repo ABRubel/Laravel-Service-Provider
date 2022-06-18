@@ -14,7 +14,13 @@ class PaymentGatewayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(PaymentGatewayInterface::class);
+        $this->app->bind(
+            PaymentGatewayInterface::class,
+            function($app, $parameters) {
+                $className = config('payment_gateway.gateways.' . $parameters['service']);
+                return new $className;
+            }
+        );
     }
 
     /**

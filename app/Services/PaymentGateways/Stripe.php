@@ -6,8 +6,8 @@ use App\Services\PaymentGatewayInterface;
 
 class Stripe implements PaymentGatewayInterface
 {
-    public function makePayment()
+    public function makePayment($data)
     {
-        dd("I am Stripe");
+        dd($data . " I am Stripe");
     }
 }

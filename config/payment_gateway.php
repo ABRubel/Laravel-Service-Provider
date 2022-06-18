@@ -1,14 +1,8 @@
 <?php
-
-use App\Services\PaymentGateways\{ Paypal,
-                                  Stripe
-                                };
-
+$directory = '\\App\\Services\\PaymentGateways\\';
 return [
-    'paypal' => [
-        'class' => Paypal::class,
-    ],
-    'stripe' => [
-        'class' => Stripe::class,
+    'gateways' => [
+        'paypal' => $directory . "Paypal",
+        'stripe' => $directory . "Stripe"
     ]
 ];

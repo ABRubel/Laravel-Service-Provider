@@ -7,7 +7,7 @@ class PaymentGatewayRegistry
 
     protected $gateways = [];
 
-    function register($name, PaymentGateway $instance)
+    function register($name, PaymentGatewayInterface $instance)
     {
         $this->gateways[$name] = $instance;
         return $this;
@@ -18,7 +18,7 @@ class PaymentGatewayRegistry
         if (in_array($name, $this->gateways)) {
             return $this->gateways[$name];
         } else {
-            throw new Exception("Invalid gateway");
+            throw new \Exception("Invalid gateway");
         }
     }
 }
